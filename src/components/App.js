@@ -1,5 +1,7 @@
 export default function App(){
     return(
-        <h1>Hellooo</h1>
+        <div class="content">
+            
+        </div>     
     )
 }
