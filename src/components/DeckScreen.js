@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import DeckCards from './DeckCards'
 
 export default function DeckScreen(){
     const decks = [
@@ -14,34 +15,23 @@ export default function DeckScreen(){
         {question:"Usamos estado (state) para __", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
     ]
 
+    const deck = [];
+    function createDeck() {
+    decks.sort(() => Math.random() - 0.5);
+    decks.forEach((value,index) => {
+        if(index<4){
+            deck.push({ ...value,
+            status:"card" });
+        };
+    });
+    }
 
+    createDeck();
+    console.log(deck)
     return(
         <div className="deck-screen">
             <Header />
-            <div className="answer">
-                <div className="answer-text">
-                    <h2>dizer para o React quais informações quando atualizadas devem renderizar a tela novamente</h2>
-                </div>
-                <div className="button-container">
-                    <div className="button-red"><p>Não Lembrei</p></div>
-                    <div className="button-yellow"><p>Quase não lembrei</p></div>
-                    <div className="button-green"><p>Zap!</p></div>
-                </div>
-
-            </div>
-            <div className="card red">
-                <h2>Pergunta 2</h2>
-                <ion-icon name="close-circle"></ion-icon>
-            </div>
-            <div className="card yellow">
-                <h2>Pergunta 3</h2>
-                <ion-icon name="help-circle"></ion-icon>
-            </div>
-            <div className="card green">
-                <h2>Pergunta 4</h2>
-                <ion-icon name="checkmark-circle"></ion-icon>
-            </div>
-
+            <DeckCards />
             <Footer />  
             
         </div>

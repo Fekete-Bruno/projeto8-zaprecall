@@ -54,7 +54,6 @@ footer > *{
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -88,6 +87,7 @@ footer > *{
 }
 
 .deck-screen{
+    margin-top: 5vh;
     width: 85vw;
 }
 
@@ -128,7 +128,7 @@ footer > *{
     cursor: default;
 }
 .green:active, .yellow:active, .red:active{
-    transform: translateY(0px);
+    transform: none;
 }
 
 .red h2{
