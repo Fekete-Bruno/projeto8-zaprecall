@@ -10,7 +10,7 @@ export default function App(){
 
     return(
         <div className="content">
-            {(screen) ? (<TitleScreen setScreen={setScreen}/>) : (<DeckScreen />)}
+            {(screen) ? (<TitleScreen setScreen={setScreen}/>) : (<DeckScreen setScreen={setScreen}/>)}
         </div>     
     );
 }

@@ -1,6 +1,6 @@
 import "./style.css"
 
-export default function footer({counter,deck,footerIcons}){
+export default function footer({counter,deck,footerIcons,setFooterIcons,setScreen}){
     let finalResult;
 
     function checkColors(color,index){
@@ -27,22 +27,32 @@ export default function footer({counter,deck,footerIcons}){
         }
     }
 
+    function restartAll(){
+        setScreen(true);
+    }
+
     let iconList = footerIcons.map(checkColors)
 
     if(counter===deck.length){
         if(footerIcons.includes("card red")){
             finalResult=
-            <p>
-                😢 <strong>Putz...</strong><br/> 
-                Ainda faltam alguns...
-                Mas não desanime!
-            </p>
+                <div className="final">
+                <p>
+                    😢 <strong>Putz...</strong><br />
+                    Ainda faltam alguns...
+                    Mas não desanime!
+                </p>
+                <div className="restart" onClick={restartAll}>Reiniciar</div>
+                </div>
         } else {
             finalResult=
+            <div className="final">
             <p>
                 🥳 <strong>Parabéns!!!</strong><br/>
                 Você não esqueceu de nenhum flashcard!
             </p>
+            <div className="restart" onClick={restartAll}>Reiniciar</div>
+            </div>
         }
     }
 

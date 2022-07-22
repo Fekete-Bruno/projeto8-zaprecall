@@ -3,7 +3,7 @@ import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Cards from './Cards'
 
-export default function DeckScreen(){
+export default function DeckScreen({setScreen}){
     const decks = [
         {question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
         {question:"O React é ___", answer:"uma biblioteca JavaScript para construção de interfaces"},
@@ -45,7 +45,9 @@ export default function DeckScreen(){
                     footerIcons={footerIcons} setFooterIcons={setFooterIcons}/>
                 ))}
             </div>
-            <Footer counter={counter} deck={deck} footerIcons={footerIcons}/>  
+            <Footer counter={counter} deck={deck} 
+            footerIcons={footerIcons} setFooterIcons={setFooterIcons}
+            setScreen={setScreen}/>  
         </div>
     )
 }
