@@ -16,13 +16,26 @@ export default function DeckScreen(){
         {question:"Usamos estado (state) para ___", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
     ]
 
-    const [counter,setCounter]=React.useState(0)
+    const [deck,setDeck] = React.useState([]);
+    const [counter,setCounter]=React.useState(0);
+    
+    function createDeck() {
+    decks.sort(() => Math.random() - 0.5);
+    decks.forEach((card) => {
+        deck.push({ ...card,
+        status:"card"});
+    });
+    }
+
+    if(deck.length===0){
+        createDeck()
+    }
 
     return(
         <div className="deck-screen">
             <Header />
-            <DeckCards decks={decks} />
-            <Footer counter={counter}/>  
+            <DeckCards deck={deck} setDeck={setDeck}/>
+            <Footer counter={counter} setCounter={setCounter} deck={deck}/>  
         </div>
     )
 }
