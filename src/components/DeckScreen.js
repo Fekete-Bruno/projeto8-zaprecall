@@ -1,8 +1,7 @@
 import React from 'react'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import DeckCards from './DeckCards'
-import react from 'react'
+import Cards from './Cards'
 
 export default function DeckScreen(){
     const decks = [
@@ -16,6 +15,7 @@ export default function DeckScreen(){
         {question:"Usamos estado (state) para ___", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
     ]
 
+    const [started,setStarted] = React.useState(false)
     const [deck,setDeck] = React.useState([]);
     const [counter,setCounter]=React.useState(0);
     
@@ -34,7 +34,11 @@ export default function DeckScreen(){
     return(
         <div className="deck-screen">
             <Header />
-            <DeckCards deck={deck} setDeck={setDeck} setCounter={setCounter}/>
+            <div className="cards">
+                {deck.map((card, index) => (
+                <Cards index={index} key={index} card={card} started={started} setStarted={setStarted} deck={deck} setDeck={setDeck}/>
+                ))}
+            </div>
             <Footer counter={counter} deck={deck}/>  
         </div>
     )

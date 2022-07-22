@@ -1,4 +1,3 @@
-import DeckCards from "../DeckCards";
 import "./style.css"
 
 export default function footer({counter,deck}){

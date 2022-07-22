@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card({index,card,started,setStarted,deck,setDeck}){
+export default function Cards({index,card,started,setStarted,deck,setDeck}){
 
     function startQuestion(){
         if(!started){
