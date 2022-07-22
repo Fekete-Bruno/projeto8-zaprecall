@@ -18,16 +18,19 @@ export default function DeckCards({decks}){
         {/* {deck.map((card, index) => (
           <Card index={index+1} key={index} card={card} />
         ))} */} 
-        <div className="card" >
-            <h2>Pergunta N</h2>
+
+        <div className="card">
+            <p>Pergunta N</p>
             <div><ion-icon name="play-outline"></ion-icon></div>
         </div>
+
         <div className="question">
-            <h2 className="question-text">Usamos estado (state) para ___</h2>
-            <div className="question-icon"><ion-icon name="reload-outline"></ion-icon></div>
+            <p>Usamos estado (state) para ___</p>
+            <div><ion-icon name="reload-outline"></ion-icon></div>
         </div>
+
         <div className="answer">
-            <h2 className="answer-text">dizer para o React quais informações quando atualizadas devem renderizar a tela novamente</h2>
+            <p>dizer para o React quais informações quando atualizadas devem renderizar a tela novamente</p>
             <div className="button-container">
                 <div className="button-red">
                     <p>Não lembrei</p>
@@ -40,14 +43,17 @@ export default function DeckCards({decks}){
                 </div>
             </div>
         </div>
+
         <div className="card red">
             <h2>Pergunta N</h2>
             <div><ion-icon name="close-circle"></ion-icon></div>    
         </div>
+
         <div className="card yellow">
             <h2>Pergunta N</h2>
             <div><ion-icon name="help-circle"></ion-icon></div>    
         </div>
+        
         <div className="card green">
             <h2>Pergunta N</h2>
             <div><ion-icon name="checkmark-circle"></ion-icon></div>    
