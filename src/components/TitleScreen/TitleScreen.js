@@ -5,8 +5,8 @@ export default function TitleScreen({setScreen}){
     return(
         <div className="title">
             <img src={newLogo} alt="new logo"></img>
-            <h1>ZapRecall</h1>
-            <button onClick={()=>setScreen(false)}>Iniciar Recall!</button>
+            <div className="title-text">ZapRecall</div>
+            <div className="button" onClick={()=>setScreen(false)}>Iniciar Recall!</div>
         </div>
     );
 }

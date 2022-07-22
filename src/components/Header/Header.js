@@ -5,7 +5,7 @@ export default function Header(){
     return(
         <div className="header">
             <img src={logo} alt="logo"></img>
-            <h1>ZapRecall</h1>
+            <span className="title-text">ZapRecall</span>
         </div>
     );
 }

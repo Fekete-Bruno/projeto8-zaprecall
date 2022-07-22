@@ -1,5 +1,5 @@
 .header{
-    margin-top:40vh;
+    margin-top:2vh;
     display: flex;
     align-items: center;
 }
@@ -10,4 +10,10 @@
 
 .header img{
     width:15vw;
+}
+
+@media screen and (min-width:1024px){
+    .header img{
+        width:7vw;
+    }   
 }
