@@ -20,7 +20,6 @@ export default function footer({counter,deck}){
                     <ion-icon name="close-circle"></ion-icon>
                 </div>
             </div>
-            
         </div>
     );
 }

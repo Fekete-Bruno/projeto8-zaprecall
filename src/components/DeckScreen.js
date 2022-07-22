@@ -36,7 +36,7 @@ export default function DeckScreen(){
             <Header />
             <div className="cards">
                 {deck.map((card, index) => (
-                <Cards index={index} key={index} card={card} started={started} setStarted={setStarted} deck={deck} setDeck={setDeck}/>
+                <Cards index={index} key={index} card={card} started={started} setStarted={setStarted} deck={deck} setDeck={setDeck} counter={counter} setCounter={setCounter}/>
                 ))}
             </div>
             <Footer counter={counter} deck={deck}/>  

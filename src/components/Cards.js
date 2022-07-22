@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Cards({index,card,started,setStarted,deck,setDeck}){
+export default function Cards({index,card,started,setStarted,deck,setDeck,counter,  setCounter}){
 
     function startQuestion(){
         if(!started){
@@ -12,6 +12,7 @@ export default function Cards({index,card,started,setStarted,deck,setDeck}){
     function resultAnswer(result){
         deckManager(result);
         setStarted(false);
+        setCounter(counter+1)
     }
 
     function deckManager(text){
