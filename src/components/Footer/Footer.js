@@ -1,6 +1,9 @@
+import "./style.css"
+
 export default function footer(){
     return(
-        <footer>
+        <div className="footer">
+            <p></p>
             <p>0/4 CONCLUÍDOS</p>
             <div className="check-container">
                 <div className="green">
@@ -17,6 +20,6 @@ export default function footer(){
                 </div>
             </div>
             
-        </footer>
+        </div>
     );
 }
