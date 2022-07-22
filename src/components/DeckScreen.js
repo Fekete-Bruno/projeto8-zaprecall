@@ -18,7 +18,8 @@ export default function DeckScreen(){
     const [started,setStarted] = React.useState(false)
     const [deck,setDeck] = React.useState([]);
     const [counter,setCounter]=React.useState(0);
-    
+    const [footerIcons, setFooterIcons] = React.useState([]);
+
     function createDeck() {
     decks.sort(() => Math.random() - 0.5);
     decks.forEach((card) => {
@@ -36,10 +37,15 @@ export default function DeckScreen(){
             <Header />
             <div className="cards">
                 {deck.map((card, index) => (
-                <Cards index={index} key={index} card={card} started={started} setStarted={setStarted} deck={deck} setDeck={setDeck} counter={counter} setCounter={setCounter}/>
+                <Cards 
+                    index={index} key={index} card={card} 
+                    started={started} setStarted={setStarted} 
+                    deck={deck} setDeck={setDeck} 
+                    counter={counter} setCounter={setCounter}
+                    footerIcons={footerIcons} setFooterIcons={setFooterIcons}/>
                 ))}
             </div>
-            <Footer counter={counter} deck={deck}/>  
+            <Footer counter={counter} deck={deck} footerIcons={footerIcons}/>  
         </div>
     )
 }
