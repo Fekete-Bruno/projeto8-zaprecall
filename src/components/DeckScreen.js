@@ -34,8 +34,8 @@ export default function DeckScreen(){
     return(
         <div className="deck-screen">
             <Header />
-            <DeckCards deck={deck} setDeck={setDeck}/>
-            <Footer counter={counter} setCounter={setCounter} deck={deck}/>  
+            <DeckCards deck={deck} setDeck={setDeck} setCounter={setCounter}/>
+            <Footer counter={counter} deck={deck}/>  
         </div>
     )
 }

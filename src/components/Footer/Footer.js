@@ -1,12 +1,12 @@
+import DeckCards from "../DeckCards";
 import "./style.css"
 
-export default function footer(){
+export default function footer({counter,deck}){
 
-    
     return(
         <div className="footer">
             <p></p>
-            <p>0/4 CONCLUÍDOS</p>
+            <p>{counter}/{deck.length} CONCLUÍDOS</p>
             <div className="check-container">
                 <div className="green">
                     <ion-icon name="checkmark-circle"></ion-icon>
