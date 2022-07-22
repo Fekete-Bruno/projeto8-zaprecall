@@ -6,7 +6,7 @@ import "../css/style-mobile.css"
 
 
 export default function App(){
-    const [screen, setScreen] = React.useState(true)
+    const [screen, setScreen] = React.useState(false)
 
     return(
         <div className="content">
