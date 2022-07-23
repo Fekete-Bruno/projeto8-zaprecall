@@ -1,6 +1,6 @@
 import "./style.css"
 
-export default function footer({counter,deck,footerIcons,setFooterIcons,setScreen}){
+export default function footer({counter,deck,footerIcons,setScreen,deckGoal}){
     let finalResult;
 
     function checkColors(color,index){
@@ -34,7 +34,7 @@ export default function footer({counter,deck,footerIcons,setFooterIcons,setScree
     let iconList = footerIcons.map(checkColors)
 
     if(counter===deck.length){
-        if(footerIcons.includes("card red")){
+        if(footerIcons.includes("card red") || footerIcons.filter((icon)=>(icon==="card green")).length<deckGoal){
             finalResult=
                 <div className="final">
                 <p>
@@ -60,6 +60,7 @@ export default function footer({counter,deck,footerIcons,setFooterIcons,setScree
         <div className="footer">
             {finalResult}
             <p>{counter}/{deck.length} CONCLUÍDOS</p>
+            <p>META: {footerIcons.filter((icon)=>(icon==="card green")).length}/{deckGoal} ZAPS</p>
             <div className="check-container">
                 {iconList}
             </div>

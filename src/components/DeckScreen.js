@@ -3,7 +3,7 @@ import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Cards from './Cards'
 
-export default function DeckScreen({questions,setScreen}){
+export default function DeckScreen({questions,setScreen, deckGoal}){
 
     const [started,setStarted] = React.useState(false)
     const [deck,setDeck] = React.useState([]);
@@ -36,8 +36,8 @@ export default function DeckScreen({questions,setScreen}){
                 ))}
             </div>
             <Footer counter={counter} deck={deck} 
-            footerIcons={footerIcons} setFooterIcons={setFooterIcons}
-            setScreen={setScreen}/>  
+            footerIcons={footerIcons}
+            setScreen={setScreen} deckGoal={deckGoal}/>  
         </div>
     )
 }

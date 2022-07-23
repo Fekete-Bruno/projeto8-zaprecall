@@ -7,9 +7,11 @@ import "../css/style-mobile.css"
 
 export default function App(){
     const [screen, setScreen] = React.useState(true);
-    const [deckNumber, setDeckNumber] = React.useState("")
+    const [deckNumber, setDeckNumber] = React.useState(0);
+    const [deckGoal,setDeckGoal] = React.useState(0);
 
     const decks = [
+        {deckName:"Selecione seu deck",questions:[]},
         {deckName:"Flashcards de HTML",
         questions: [{question:"Qual é o papel/responsabilidade do HTML na construção de um site?", answer:"Ele traz o conteúdo e a semântica dos elementos de um site"},
         {question:"O que são, por exemplo, <body>, <p>, <strong>?", answer:"Tags"},
@@ -44,8 +46,11 @@ export default function App(){
 
     return(
         <div className="content">
-            {(screen) ? (<TitleScreen decks={decks} setScreen={setScreen} deckNumber={deckNumber} setDeckNumber={setDeckNumber}/>) 
-            : (<DeckScreen questions={decks[deckNumber].questions} setScreen={setScreen}/>)}
+            {(screen) ? (<TitleScreen 
+                            decks={decks} setScreen={setScreen} 
+                            deckNumber={deckNumber} setDeckNumber={setDeckNumber}
+                            deckGoal={deckGoal} setDeckGoal={setDeckGoal}/>) 
+            : (<DeckScreen questions={decks[deckNumber].questions} setScreen={setScreen} deckGoal={deckGoal}/>)}
         </div>     
     );
 }
