@@ -1,6 +1,6 @@
 import React from "react";
 import TitleScreen from "./TitleScreen/TitleScreen"
-import DeckScreen from "./DeckScreen";
+import DeckScreen from "./DeckScreen/DeckScreen";
 import "../css/reset.css"
 import "../css/style-mobile.css"
 

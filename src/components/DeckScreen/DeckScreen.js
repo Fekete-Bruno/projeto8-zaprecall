@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
-import Cards from './Cards'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import Cards from '../Cards/Cards'
 
 export default function DeckScreen({questions,setScreen, deckGoal}){
 
