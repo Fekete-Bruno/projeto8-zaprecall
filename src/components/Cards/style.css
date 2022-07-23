@@ -1,0 +1,136 @@
+.answer, .question, .card{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3vh;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.answer, .question{
+    height:20vh;
+}
+.answer>*, .question > *{
+    margin: 3.5%;
+}
+
+.answer p, .question p{
+    color:rgba(51, 51, 51, 1);
+    font-size: 2.5vh;
+}
+
+.answer p, .question p, .question > div{
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.answer, .question p{
+    flex-direction: column;
+}
+
+.question > div{
+    flex-direction: column-reverse;
+}
+
+.question > div ion-icon{
+    font-size: 3vh;
+}
+
+.card > *{
+    margin: 4%;
+}
+
+.card p{
+    color:rgba(51, 51, 51, 1);
+    font-size: 2.5vh;
+}
+
+.card ion-icon{
+    font-size: 5vh;
+}
+
+
+.green:hover, .yellow:hover, .red:hover{
+    cursor: default;
+}
+.green:active, .yellow:active, .red:active{
+    transform: none;
+}
+
+.red h2{
+    color: rgba(255, 48, 48, 1);
+    text-decoration:line-through;
+}
+
+.red ion-icon{
+    color: rgba(255, 48, 48, 1) ;
+}
+
+.yellow h2{
+    color: rgba(255, 146, 46, 1);
+    text-decoration:line-through;
+}
+
+.yellow ion-icon{
+    color: rgba(255, 146, 46, 1);
+}
+
+.green h2{
+    color: rgba(47, 190, 52, 1);
+    text-decoration:line-through;
+}
+
+.green ion-icon{
+    color: rgba(47, 190, 52, 1);
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.button-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: 100%;
+    width:30%;
+}
+.button-container p{
+    font-size: 2vh;
+    margin:3px;
+    color:white;
+    text-align: center;
+}
+
+.button-red{
+    background-color: rgba(255, 48, 48, 1);
+}
+
+.button-yellow{
+    background-color: rgba(255, 146, 46, 1);
+}
+
+.button-green{
+    background-color: rgba(47, 190, 52, 1);
+}
+
+.button-green:hover, .button-yellow:hover, .button-red:hover, .question:hover, .card:hover{
+    cursor: pointer;
+}
+
+.button-green:active,.button-yellow:active,.button-red:active, .question:active, .card:active{
+    transform: translateY(3px);
+}
+
+@media screen and (min-width:1024px){
+    .answer>*{
+        margin:2%;
+    }   
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 export default function Cards({index,card,started,setStarted,deck,setDeck,counter,setCounter,footerIcons,setFooterIcons}){
 
@@ -28,9 +29,10 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
         return(
             <div className="card" onClick={()=>{startQuestion()}}>
                 <h2>Pergunta {index+1}</h2>
-                <div className="icon"><ion-icon name="play-outline"></ion-icon></div>
+                <div><ion-icon name="play-outline"></ion-icon></div>
             </div>
         );
+
         case("question"):
         return(
             <div className="question" onClick={()=>deckManager("answer")}>
@@ -38,49 +40,50 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
                 <div><ion-icon name="reload-outline"></ion-icon></div>
             </div>      
 
-        )
+        );
         
         case("answer"):
-            return(
-            <div className="answer">
-                <p>{card.answer}</p>
-                <div className="button-container">
-                <div className="button-red" onClick={()=>resultAnswer("card red")}>
-                    <p>Não lembrei</p>
-                </div>
-                <div className="button-yellow" onClick={()=>resultAnswer("card yellow")}>
-                    <p>Quase não lembrei</p>
-                </div>
-                <div className="button-green" onClick={()=>resultAnswer("card green")}>
-                    <p>Zap!</p>
-                </div>
-                </div>
+        return(
+        <div className="answer">
+            <p>{card.answer}</p>
+            <div className="button-container">
+            <div className="button-red" onClick={()=>resultAnswer("card red")}>
+                <p>Não lembrei</p>
             </div>
-            );
+            <div className="button-yellow" onClick={()=>resultAnswer("card yellow")}>
+                <p>Quase não lembrei</p>
+            </div>
+            <div className="button-green" onClick={()=>resultAnswer("card green")}>
+                <p>Zap!</p>
+            </div>
+            </div>
+        </div>
+        );
 
         case("card red"):
-            return(
-                <div className="card red">
-                <h2>Pergunta {index+1}</h2>
-                <div><ion-icon name="close-circle"></ion-icon></div>    
-                </div>
-            );
+        return(
+            <div className="card red">
+            <h2>Pergunta {index+1}</h2>
+            <div><ion-icon name="close-circle"></ion-icon></div>    
+            </div>
+        );
 
         case("card yellow"):
-            return(
-                <div className="card yellow">
-                <h2>Pergunta {index+1}</h2>
-                <div><ion-icon name="help-circle"></ion-icon></div>    
-                </div>
-            );
+        return(
+            <div className="card yellow">
+            <h2>Pergunta {index+1}</h2>
+            <div><ion-icon name="help-circle"></ion-icon></div>    
+            </div>
+        );
+
         case("card green"):
-            return(
-                <div className="card green">
-                <h2>Pergunta {index+1}</h2>
-                <div><ion-icon name="checkmark-circle"></ion-icon></div>    
-                </div>
-            );
+        return(
+            <div className="card green">
+            <h2>Pergunta {index+1}</h2>
+            <div><ion-icon name="checkmark-circle"></ion-icon></div>    
+            </div>
+        );
         default:
-            return(<div>DEU ERRO AQUI...</div>);
+        return(<div>DEU ERRO AQUI...</div>);
     }
 }
