@@ -1,10 +1,10 @@
 import "./style.css"
 import newLogo from "./logo-new.png"
 
-export default function TitleScreen({decks,setScreen,deckNumber,setDeckNumber,deckGoal,setDeckGoal}){
+export default function TitleScreen({decks,setScreen,deckNumber,setDeckNumber,deckGoal,setDeckGoal,cardsAmount,setCardsAmount}){
 
     function startRecall(){
-        if(deckGoal!==0 && deckNumber!==0){
+        if(cardsAmount !==0 && deckGoal!==0 && deckNumber!==0){
         setScreen(false);
         }
     }
@@ -22,10 +22,19 @@ export default function TitleScreen({decks,setScreen,deckNumber,setDeckNumber,de
             })}
             </select>
 
+            <select required defaultValue="" onChange={(e)=>{setCardsAmount(e.target.value)}}>
+            <option value="" disabled >Quantos Cards você quer?</option>
+            {decks[deckNumber].questions.map((q,index)=>{
+                return(<option value={index+1} key={index}>{(index+1)+" Cards"}</option>);
+            })}
+            </select>
+
             <select required defaultValue="" onChange={(e)=>{setDeckGoal(e.target.value)}}>
             <option value="" disabled >Selecione a meta de Zaps</option>
-            {decks[deckNumber].questions.map((question,index)=>{
-                return(<option value={index+1} key={index}>{(index+1)+" Zaps"}</option>);
+            {decks[deckNumber].questions.map((q,index)=>{
+                if(index<cardsAmount){
+                    return(<option value={index+1} key={index}>{(index+1)+" Zaps"}</option>);
+                }
             })}
             </select>
             

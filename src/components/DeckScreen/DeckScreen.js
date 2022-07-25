@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 import Cards from '../Cards/Cards'
 import "./style.css"
 
-export default function DeckScreen({questions,setScreen, deckGoal, deckName}){
+export default function DeckScreen({questions,setScreen, deckGoal, cardsAmount ,deckName}){
 
     const [started,setStarted] = React.useState(false)
     const [deck,setDeck] = React.useState([]);
@@ -13,9 +13,10 @@ export default function DeckScreen({questions,setScreen, deckGoal, deckName}){
 
     function createDeck() {
     questions.sort(() => Math.random() - 0.5);
-    questions.forEach((question) => {
-        deck.push({ ...question,
-        status:"card"});
+    questions.forEach((question,index) => {
+        if(index<cardsAmount){deck.push({ ...question,
+            status:"card"});
+        }
     });
     }
 
