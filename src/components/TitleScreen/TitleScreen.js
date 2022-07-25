@@ -4,7 +4,7 @@ import newLogo from "./logo-new.png"
 export default function TitleScreen({decks,setScreen,deckNumber,setDeckNumber,deckGoal,setDeckGoal}){
 
     function startRecall(){
-        if(deckGoal!==0){
+        if(deckGoal!==0 && deckNumber!==0){
         setScreen(false);
         }
     }
@@ -15,9 +15,10 @@ export default function TitleScreen({decks,setScreen,deckNumber,setDeckNumber,de
 
             <div className="title-text">ZapRecall</div>
 
-            <select required defaultValue={deckNumber} onChange={(e)=>{setDeckNumber(e.target.value)}}>
+            <select required defaultValue="" onChange={(e)=>{setDeckNumber(e.target.value)}}>
+            <option value="" disabled>Selecione seu Deck</option>
             {decks.map((deck,index)=>{
-                return(<option value={index} key={index}>{deck.deckName}</option>);
+                return(<option value={index} key={index}>Flashcards de {deck.deckName}</option>);
             })}
             </select>
 
