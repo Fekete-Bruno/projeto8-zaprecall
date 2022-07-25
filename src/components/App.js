@@ -18,7 +18,7 @@ export default function App(){
                 decks={decks} setScreen={setScreen} 
                 deckNumber={deckNumber} setDeckNumber={setDeckNumber}
                 deckGoal={deckGoal} setDeckGoal={setDeckGoal}/>) 
-            : (<DeckScreen questions={decks[deckNumber].questions} setScreen={setScreen} deckGoal={deckGoal}/>)}
+            : (<DeckScreen questions={decks[deckNumber].questions} setScreen={setScreen} deckGoal={deckGoal} deckName={decks[deckNumber].deckName}/>)}
         </div>     
     );
 }

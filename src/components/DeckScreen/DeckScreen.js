@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 import Cards from '../Cards/Cards'
 import "./style.css"
 
-export default function DeckScreen({questions,setScreen, deckGoal}){
+export default function DeckScreen({questions,setScreen, deckGoal, deckName}){
 
     const [started,setStarted] = React.useState(false)
     const [deck,setDeck] = React.useState([]);
@@ -25,7 +25,7 @@ export default function DeckScreen({questions,setScreen, deckGoal}){
 
     return(
         <div className="deck-screen">
-            <Header />
+            <Header deckName={deckName}/>
             <div className="cards">
                 {deck.map((card, index) => (
                 <Cards 
