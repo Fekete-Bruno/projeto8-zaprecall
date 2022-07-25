@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
 
 export default function Cards({index,card,started,setStarted,deck,setDeck,counter,setCounter,footerIcons,setFooterIcons}){
 
     function startQuestion(){
         if(!started){
-            deckManager("question")
+            deckManager("question");
             setStarted(true);
         }
     }
@@ -14,20 +14,20 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
         deckManager(result);
         setStarted(false);
         footerIcons.push(result);
-        setFooterIcons([...footerIcons])
-        setCounter(counter+1)
+        setFooterIcons([...footerIcons]);
+        setCounter(counter+1);
     }
 
     function deckManager(text){
-        let newDeck = [...deck];
+        const newDeck = [...deck];
         newDeck[index].status=text;
         setDeck([...newDeck]);
     }
-    
+
     switch(card.status){
         case("card"):
         return(
-            <div className="card" onClick={()=>{startQuestion()}}>
+            <div className="card" onClick={()=>{startQuestion();}}>
                 <h2>Pergunta {index+1}</h2>
                 <div><ion-icon name="play-outline"></ion-icon></div>
             </div>
@@ -38,10 +38,10 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
             <div className="question" onClick={()=>deckManager("answer")}>
                 <p>{card.question}</p>
                 <div><ion-icon name="reload-outline"></ion-icon></div>
-            </div>      
+            </div>
 
         );
-        
+
         case("answer"):
         return(
         <div className="answer">
@@ -64,7 +64,7 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
         return(
             <div className="card red">
             <h2>Pergunta {index+1}</h2>
-            <div><ion-icon name="close-circle"></ion-icon></div>    
+            <div><ion-icon name="close-circle"></ion-icon></div>
             </div>
         );
 
@@ -72,7 +72,7 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
         return(
             <div className="card yellow">
             <h2>Pergunta {index+1}</h2>
-            <div><ion-icon name="help-circle"></ion-icon></div>    
+            <div><ion-icon name="help-circle"></ion-icon></div> 
             </div>
         );
 
@@ -80,7 +80,7 @@ export default function Cards({index,card,started,setStarted,deck,setDeck,counte
         return(
             <div className="card green">
             <h2>Pergunta {index+1}</h2>
-            <div><ion-icon name="checkmark-circle"></ion-icon></div>    
+            <div><ion-icon name="checkmark-circle"></ion-icon></div>
             </div>
         );
         default:
